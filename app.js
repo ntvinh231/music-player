@@ -34,12 +34,11 @@ const songPlayedList = new Set();
 
 const app = {
 	currentIndex: 0,
-	previousIndex: 0,
 	isPlaying: false,
 	isRandom: false,
 	isRepeat: false,
 	isMute: false,
-	currentVolume: 0.5,
+	currentVolume: 0.0,
 	config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
 	setConfig: function (key, value) {
 		this.config[key] = value;
@@ -262,7 +261,6 @@ const app = {
 		volumeIcon.onclick = function () {
 			_this.isMute = !_this.isMute;
 			// console.log({ volumeBar });
-
 			_this.setConfig('isMute', _this.isMute);
 			volumeIcon.classList.toggle('active', _this.isMute);
 			if (_this.isMute) {
@@ -339,6 +337,13 @@ const app = {
 		this.isRepeat = this.config.isRepeat;
 		this.currentVolume = this.config.currentVolume;
 		this.isMute = this.config.isMute;
+
+		// Hiển thị trạng thái bang đầu của button repeat và random
+		if (this.isRandom) randomBtn.classList.add('active');
+		else randomBtn.classList.remove('active');
+		if (this.isRandom) repeatBtn.classList.add('active');
+		else repeatBtn.classList.remove('active');
+		volumeIcon.classList.toggle('active', this.isMute);
 	},
 
 	activeSong: function () {
@@ -363,11 +368,6 @@ const app = {
 		this.defineProperties();
 		this.handleEvent();
 		this.loadCurrentSong();
-
-		// Hiển thị trạng thái bang đầu của button repeat và random
-		randomBtn.classList.toggle('active', this.isRandom);
-		repeatBtn.classList.toggle('active', this.isRepeat);
-		volumeIcon.classList.toggle('active', this.isMute);
 	},
 };
 
