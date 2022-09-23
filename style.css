@@ -245,7 +245,11 @@ header h2 {
 	margin-top: 6px;
 	margin-left: 30px;
 	cursor: pointer;
+<<<<<<< HEAD
 	margin-right: 14px;
+=======
+	margin-right: 10px;
+>>>>>>> 026bb478a3b54c51c4b974915a7eee258bf259bd
 }
 
 .volume__icon,
