@@ -169,6 +169,7 @@ const app = {
 			playBtn.classList.add('playing');
 			_this.isPlaying = true;
 			cbThumbAnimation.play();
+			_this.activeSong(); // intoScrollView đến song đã lưu
 			if (_this.isMute) {
 				audio.volume = 0;
 				volumeBar.Value = 0;
