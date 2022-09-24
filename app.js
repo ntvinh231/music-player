@@ -85,7 +85,7 @@ const app = {
 			name: 'We Dont Talk Anymore',
 			singer: 'Charlie Puth',
 			path: './music/We Don_t Talk Anymore - Charlie Puth_ Se.mp3',
-			image: 'https://data.chiasenhac.com/data/cover/172/171025.jpg',
+			image: 'https://upload.wikimedia.org/wikipedia/vi/8/89/Wedonttalkanymore.jpg',
 		},
 		{
 			name: 'Anh Đã Quen Với Cô Đơn',
@@ -103,13 +103,13 @@ const app = {
 			name: 'Say Do You',
 			singer: 'Tiên Tiên',
 			path: './music/Say-You-Do-Tien-Tien.mp3',
-			image: 'https://data.chiasenhac.com/data/cover/172/171025.jpg',
+			image: 'https://imgt.taimienphi.vn/cf/Images/hi/2018/3/22/loi-bai-hat-say-you-do.jpg',
 		},
 		{
 			name: 'Cơn Mưa Rào',
 			singer: 'JSOL',
 			path: './music/Con-Mua-Rao-JSOL.mp3',
-			image: 'https://data.chiasenhac.com/data/cover/172/171025.jpg',
+			image: 'https://imgt.taimienphi.vn/cf/Images/hi/2018/6/22/loi-bai-hat-con-mua-rao.jpg',
 		},
 	],
 	defineProperties: function () {
