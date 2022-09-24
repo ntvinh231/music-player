@@ -325,7 +325,6 @@ const app = {
 			newIndex = Math.floor(Math.random() * this.songs.length);
 		} while (songPlayedList.has(newIndex));
 		this.currentIndex = newIndex;
-		console.log(this.currentIndex);
 		this.loadCurrentSong();
 		songPlayedList.add(newIndex);
 		if (songPlayedList.size === this.songs.length) {
