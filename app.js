@@ -39,11 +39,15 @@ const app = {
 	isRepeat: false,
 	isMute: false,
 	currentVolume: 0.0,
-	config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
+	config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {
+		currentVolume: 0.5,
+		isMute: false,
+	},
 	setConfig: function (key, value) {
 		this.config[key] = value;
 		localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
 	},
+
 	songs: [
 		{
 			name: 'Waing For You',
