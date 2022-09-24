@@ -44,6 +44,7 @@ const app = {
 		isMute: false,
 		isRepeat: false,
 		isRandom: false,
+		currentIndex: 0,
 	},
 	setConfig: function (key, value) {
 		this.config[key] = value;
@@ -324,6 +325,7 @@ const app = {
 			newIndex = Math.floor(Math.random() * this.songs.length);
 		} while (songPlayedList.has(newIndex));
 		this.currentIndex = newIndex;
+		console.log(this.currentIndex);
 		this.loadCurrentSong();
 		songPlayedList.add(newIndex);
 		if (songPlayedList.size === this.songs.length) {
@@ -343,6 +345,7 @@ const app = {
 		this.isRepeat = this.config.isRepeat;
 		this.currentVolume = this.config.currentVolume;
 		this.isMute = this.config.isMute;
+		this.currentIndex = this.config.currentIndex;
 
 		// Hiển thị trạng thái bang đầu của button repeat và random
 		randomBtn.classList.toggle('active', this.isRandom);
@@ -355,6 +358,7 @@ const app = {
 		songs.forEach((song, index) => {
 			if (index === this.currentIndex) {
 				song.classList.add('active');
+				this.setConfig('currentIndex', this.currentIndex);
 				setTimeout(() => {
 					song.scrollIntoView({
 						behavior: 'smooth',
